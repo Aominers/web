@@ -1,0 +1,109 @@
+.video-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.video-cover {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.video-player-container {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.video-player {
+  width: 100%;
+}
+
+.video-title {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.video-description {
+  margin: 10px 0;
+  text-align: justify;
+}
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.action-buttons button {
+  padding: 5px 15px;
+  border-radius: 20px;
+  background-color: #f1f1f1;
+  color: #333;
+  border: none;
+  margin-right: 5px;
+  transition: all 0.3s ease;
+}
+
+.action-buttons button:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.like-button:active {
+  background-color: #ccc;
+}
+
+.comment-button {
+  position: relative;
+}
+
+.comment-count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.comments-section {
+  margin-top: 20px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.comment-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.content {
+  flex: 1;
+}
+
+.username {
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.text {
+  margin-bottom: 5px;
+}
+
+.timestamp {
+  color: #999;
+  font-size: 12px;
+}

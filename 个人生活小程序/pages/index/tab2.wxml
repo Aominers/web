@@ -1,0 +1,61 @@
+<view class="page__bd">
+  <view class="weui-search-bar {{ inputShowed ? 'weui-search-bar_focusing' : '' }}" id="searchBar">
+    <form class="weui-search-bar__form" aria-role="combobox" aria-haspopup="true" aria-expanded="{{ inputVal.length > 0 ? 'true' : 'false' }}" aria-owns="searchResult">
+      <view class="weui-search-bar__box">
+        <i class="weui-icon-search"></i>
+        <input aria-controls="searchResult" type="text" class="weui-search-bar__input" placeholder="搜索" value="{{ inputVal }}" focus="{{ inputShowed }}" bindinput="inputTyping" />
+        <view aria-role="button" aria-label="清除" class="weui-icon-clear" wx:if="{{ inputVal.length > 0 }}" bindtap="clearInput"></view>
+      </view>
+      <label class="weui-search-bar__label" bindtap="showInput">
+        <i class="weui-icon-search"></i>
+        <span class="weui-search-bar__text">搜索</span>
+      </label>
+    </form>
+    <view aria-role="button" class="weui-search-bar__cancel-btn" bindtap="hideInput">取消</view>
+  </view>
+</view>
+<view class="page__bd page__bd_spacing">
+  <view class="weui-flex">
+    <view class="weui-flex__item">
+      <view class="placeholder">小白入门微信小程序</view>
+    </view>
+  </view>
+  <view class="weui-flex">
+    <view class="weui-flex__item">
+      <view class="placeholder">自学吉他</view>
+    </view>
+    <view class="weui-flex__item">
+      <view class="placeholder">学习日常</view>
+    </view>
+  </view>
+  <view class="weui-flex">
+    <view class="weui-flex__item">
+      <view class="placeholder">学霸笔记</view>
+    </view>
+    <view class="weui-flex__item">
+      <view class="placeholder">球场风云</view>
+    </view>
+    <view class="weui-flex__item">
+      <view class="placeholder">晴天散步</view>
+    </view>
+  </view>
+  <!-- 在搜索框下方添加搜索结果列表 -->
+  <!-- 直接在搜索结果下方展示搜索到的内容 -->
+  <view wx:if="{{searchResult.length > 0}}" class="search-results">
+    <navigator wx:for="{{searchResult}}" wx:key="*this" url="{{item.url}}" bindtap="goToDetail">
+      <view class="weui-media-box weui-media-box_appmsg">
+        <view class="weui-media-box__hd">
+          <image class="weui-media-box__thumb" src="{{item.poster}}"/>
+        </view>
+        <view class="weui-media-box__bd">
+          <text class="weui-media-box__title">{{item.title}}</text>
+          <view class="weui-media-box__desc">{{item.article}}</view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+  <view wx:elif="{{inputVal.length > 0 && searchResult.length === 0}}" class="no-result-tip">没有找到与“{{inputVal}}”相关的搜索结果。</view>
+</view>
+
+
+

@@ -1,0 +1,39 @@
+<view class="video-detail">
+  <!-- 视频封面 -->
+  <image class="video-cover" src="{{video.coverImage}}" mode="widthFix" bindtap="playVideo"/>
+
+  <!-- 视频播放器容器 -->
+  <view class="video-player-container" wx:if="{{showPlayer}}">
+    <video class="video-player" src="{{video.source}}" controls  poster="{{video.coverImage}}" bindpause="onVideoPause" bindended="onVideoP"/>
+  </view>
+
+  <!-- 视频标题 -->
+  <view class="video-title">{{video.title}}</view>
+
+  <!-- 视频简介 -->
+  <view class="video-description">
+    <text class="description-text">{{video.description}}</text>
+  </view>
+
+  <!-- 操作区域 -->
+  <view class="action-buttons">
+    <button bindtap="likeVideo" class="like-button">赞 {{video.likes || 0}}</button>
+    <button bindtap="toggleCommentSection" class="comment-button">评论</button>
+  </view>
+
+  <!-- 评论区（默认隐藏） -->
+  <view class="comments-section" wx:if="{{showComments}}">
+    <view wx:for="{{comments}}" wx:key="*this" class="comment-item">
+      <image src="{{item.avatarUrl}}" class="avatar" mode="aspectFit"/>
+      <view class="content">
+        <text class="username">{{item.username}}</text>
+        <text class="text">{{item.content}}</text>
+        <text class="timestamp">{{item.timestamp}}</text>
+      </view>
+    </view>
+  </view>
+
+
+</view>
+
+<view class="copyright">版权所有 ©202135010114胡永靖</view>

@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/index/index",
+    "pages/me/me" ,
+    "pages/movielist/movielist",
+    "pages/life1/life1",
+    "pages/life2/life2",
+    "pages/study1/study1",
+    "pages/study2/study2",
+    "pages/lifelist/lifelist",
+    "pages/studylist/studylist"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "个人生活小视频",
+    "navigationBarTextStyle": "black"
+  },
+  "useExtendedLib": {
+    "weui": true
+  },
+  
+  "style": "v2",
+  "tabBar": {
+    "color": "#ccc",
+    "selectedColor": "#ff4c91",
+    "borderStyle": "white",
+    "backgroundColor": "#ececec",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/fang.png",
+        "selectedIconPath": "/images/fang.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "/images/gong.png",
+        "selectedIconPath": "/images/gong.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

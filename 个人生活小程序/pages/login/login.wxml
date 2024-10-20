@@ -1,0 +1,9 @@
+<view class="login-container">
+  <image src="/images/login-bg.jpg" class="background-image" mode="cover"></image>
+  <view class="login-form">
+    <view class="welcome-text">欢迎登录</view>
+    <button open-type="onGetUserInfo" bindgetuserinfo="onGetUserInfo" bindtap="goToIndex" class="login-btn">微信授权登录</button>
+    <view class="info-text">点击按钮开始授权</view>
+  </view>
+  <view class="copyright">版权所有@202135010114胡永靖</view>
+</view>
